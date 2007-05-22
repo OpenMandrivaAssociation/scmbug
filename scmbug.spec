@@ -54,7 +54,7 @@ Group:      Development/Tools
 Provides the Scmbug manual.
 
 %prep
-%setup -n SCMBUG_RELEASE_%{upstream_version}
+%setup -q -n SCMBUG_RELEASE_%{upstream_version}
 
 %build
 %configure2_5x
