@@ -1,6 +1,6 @@
 %define name scmbug
-%define version 0.19.13
-%define upstream_version 0-19-13
+%define version 0.19.18
+%define upstream_version 0-19-18
 %define release %mkrel 1
 
 Name:       %{name}
@@ -11,10 +11,11 @@ License:    GPL
 Group:      Development/Tools
 Url:        http://freshmeat.net/projects/scmbug
 Source:     http://files.mkgnu.net/files/scmbug/SCMBUG_RELEASE_%{upstream_version}/source/SCMBUG_RELEASE_%{upstream_version}.tar.gz
-BuildRequires:  docbook-utils
 BuildRequires:  transfig
 BuildRequires:  ImageMagick
+BuildRequires:  docbook-utils
 BuildRequires:  docbook-dtd42-sgml
+BuildRequires:  docbook-utils-pdf
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
@@ -58,17 +59,29 @@ Provides the Scmbug manual.
 
 %build
 %configure2_5x
-%make
+make
 
 %install
+rm -rf %{buildroot}
 %makeinstall
+
+# fix documentation mess
+rm -rf %{buildroot}%{_docdir}/%{name}-server
+rm -rf %{buildroot}%{_docdir}/%{name}-common
+rm -rf %{buildroot}%{_docdir}/%{name}-tools
+mv %{buildroot}%{_docdir}/%{name}-doc %{buildroot}%{_docdir}/%{name}
+install -m 644 ChangeLog* %{buildroot}%{_docdir}/%{name}
 
 %clean
 rm -rf %{buildroot}
 
 %files common
 %defattr(-,root,root)
-%doc ChangeLog* doc/AUTHORS doc/COPYING doc/TODO
+%dir %{_docdir}/%{name}
+%{_docdir}/%{name}/ChangeLog*
+%{_docdir}/%{name}/AUTHORS
+%{_docdir}/%{name}/COPYING
+%{_docdir}/%{name}/TODO
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/lib
 %dir %{_datadir}/%{name}/lib/Scmbug
@@ -76,7 +89,6 @@ rm -rf %{buildroot}
 
 %files server
 %defattr(-,root,root)
-%doc ChangeLog* doc/AUTHORS doc/COPYING doc/TODO
 %dir %{_localstatedir}/log/%{name}
 %dir %{_sysconfdir}/%{name}
 %{_sysconfdir}/init.d/*
@@ -87,16 +99,16 @@ rm -rf %{buildroot}
 
 %files tools
 %defattr(-,root,root)
-%doc ChangeLog* doc/AUTHORS doc/COPYING doc/TODO
 %{_mandir}/man1/*
 %{_prefix}/bin/*
-%{_datadir}/%{name}/glue
+%dir %{_datadir}/%{name}/glue
+%dir %{_datadir}/%{name}/glue/etc
 %config(noreplace) %{_datadir}/%{name}/glue/etc/*
-%{_datadir}/%{name}/glue/templates/*/*
+%{_datadir}/%{name}/glue/templates
+%{_datadir}/%{name}/glue/bin
 %{_datadir}/%{name}/lib/Scmbug/Glue
 %{_datadir}/%{name}/lib/Scmbug/Tools
 
 %files doc
 %defattr(-,root,root)
-%doc ChangeLog* doc/AUTHORS doc/COPYING doc/TODO
-%doc %{_datadir}/doc/%{name}-doc/*
+%{_docdir}/%{name}/manual
