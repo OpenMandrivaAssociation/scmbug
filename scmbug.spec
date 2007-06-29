@@ -8,7 +8,7 @@ Version:    %{version}
 Release:    %{release}
 Summary:    Integration of Software Configuration Management with Bug-tracking
 License:    GPL
-Group:      Development/Tools
+Group:      Networking/WWW
 Url:        http://freshmeat.net/projects/scmbug
 Source:     http://files.mkgnu.net/files/scmbug/SCMBUG_RELEASE_%{upstream_version}/source/SCMBUG_RELEASE_%{upstream_version}.tar.gz
 BuildRequires:  transfig
