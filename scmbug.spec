@@ -24,14 +24,14 @@ Scmbug is a system that integrates software configuration management (SCM) with 
 
 %package common
 Summary:    Scmbug common libraries
-Group:      Development/Tools
+Group:      Networking/WWW
 
 %description common
 Provides library functionality shared by scmbug-tools and scmbug-server.
 
 %package tools
 Summary:    Scmbug integration tools
-Group:      Development/Tools
+Group:      Networking/WWW
 Requires:   scmbug-common = %{version}
 Requires:   libxslt
 Requires:   docbook-utils
@@ -41,7 +41,7 @@ Collection of tools that can install the integration glue in an SCM repository a
 
 %package server
 Summary:    Scmbug integration server.
-Group:      Development/Tools
+Group:      Networking/WWW
 Requires:   scmbug-common = %{version}
 
 %description server
@@ -49,7 +49,7 @@ Accepts integration requests from the Scmbug glue.
 
 %package doc
 Summary:    Scmbug documentation
-Group:      Development/Tools
+Group:      Networking/WWW
 
 %description doc
 Provides the Scmbug manual.
