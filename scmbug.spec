@@ -1,6 +1,6 @@
 %define name scmbug
-%define version 0.19.18
-%define upstream_version 0-19-18
+%define version 0.19.20
+%define upstream_version 0-19-20
 %define release %mkrel 1
 
 Name:       %{name}
@@ -9,7 +9,7 @@ Release:    %{release}
 Summary:    Integration of Software Configuration Management with Bug-tracking
 License:    GPL
 Group:      Networking/WWW
-Url:        http://freshmeat.net/projects/scmbug
+Url:        http://www.mkgnu.net/?q=scmbug
 Source:     http://files.mkgnu.net/files/scmbug/SCMBUG_RELEASE_%{upstream_version}/source/SCMBUG_RELEASE_%{upstream_version}.tar.gz
 BuildRequires:  transfig
 BuildRequires:  ImageMagick
