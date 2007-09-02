@@ -1,7 +1,7 @@
 %define name scmbug
 %define version 0.19.20
 %define upstream_version 0-19-20
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:       %{name}
 Version:    %{version}
@@ -33,7 +33,7 @@ Provides library functionality shared by scmbug-tools and scmbug-server.
 Summary:    Scmbug integration tools
 Group:      Networking/WWW
 Requires:   scmbug-common = %{version}
-Requires:   libxslt
+Requires:   libxslt-proc
 Requires:   docbook-utils
 
 %description tools
