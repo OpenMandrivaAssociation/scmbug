@@ -40,7 +40,7 @@ Requires:   docbook-utils
 Collection of tools that can install the integration glue in an SCM repository and enhance the experience of integrating SCM with bug-tracking.
 
 %package server
-Summary:    Scmbug integration server.
+Summary:    Scmbug integration server
 Group:      Networking/WWW
 Requires:   scmbug-common = %{version}
 
