@@ -1,6 +1,6 @@
 %define name scmbug
 %define version 0.22.1
-%define upstream_version 0-19-20
+%define upstream_version 0-22-1
 %define release %mkrel 1
 
 Name:       %{name}
