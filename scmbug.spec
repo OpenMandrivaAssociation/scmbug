@@ -20,7 +20,10 @@ BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
-Scmbug is a system that integrates software configuration management (SCM) with bug-tracking.  It aims to be a universal tool that will glue any SCM system (such as CVS, Subversion, and Arch) with any bug-tracking system (such as Bugzilla and Mantis).
+Scmbug is a system that integrates software configuration management (SCM) with
+bug-tracking.  It aims to be a universal tool that will glue any SCM system
+(such as CVS, Subversion, and Arch) with any bug-tracking system (such as
+Bugzilla and Mantis).
 
 %package common
 Summary:    Scmbug common libraries
@@ -37,7 +40,8 @@ Requires:   libxslt-proc
 Requires:   docbook-utils
 
 %description tools
-Collection of tools that can install the integration glue in an SCM repository and enhance the experience of integrating SCM with bug-tracking.
+Collection of tools that can install the integration glue in an SCM repository
+and enhance the experience of integrating SCM with bug-tracking.
 
 %package server
 Summary:    Scmbug integration server
