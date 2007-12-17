@@ -17,7 +17,6 @@ BuildRequires:  docbook-utils
 BuildRequires:  docbook-dtd42-sgml
 BuildRequires:  docbook-utils-pdf
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 Scmbug is a system that integrates software configuration management (SCM) with
