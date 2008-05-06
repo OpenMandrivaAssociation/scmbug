@@ -1,5 +1,5 @@
 %define name scmbug
-%define version 0.23.4
+%define version 0.25.3
 %define upstream_version %(echo %{version} | sed -e 's/\\./-/g')
 %define release %mkrel 1
 
@@ -100,6 +100,7 @@ rm -rf %{buildroot}
 %{_sbindir}/*
 %{_mandir}/man8/*
 %{_datadir}/%{name}/lib/Scmbug/Daemon
+%{_datadir}/%{name}/WebReports
 
 %files tools
 %defattr(-,root,root)
