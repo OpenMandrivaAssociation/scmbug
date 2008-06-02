@@ -93,7 +93,7 @@ rm -rf %{buildroot}
 
 %files server
 %defattr(-,root,root)
-%dir %{_localstatedir}/log/%{name}
+%dir %{_localstatedir}/lib/log/%{name}
 %dir %{_sysconfdir}/%{name}
 %{_sysconfdir}/init.d/*
 %config(noreplace) %{_sysconfdir}/%{name}/*
