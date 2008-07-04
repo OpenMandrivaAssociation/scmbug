@@ -1,5 +1,5 @@
 %define name scmbug
-%define version 0.25.3
+%define version 0.26.5
 %define upstream_version %(echo %{version} | sed -e 's/\\./-/g')
 %define release %mkrel 1
 
@@ -93,7 +93,7 @@ rm -rf %{buildroot}
 
 %files server
 %defattr(-,root,root)
-%dir %{_localstatedir}/lib/log/%{name}
+%dir %{_localstatedir}/log/%{name}
 %dir %{_sysconfdir}/%{name}
 %{_sysconfdir}/init.d/*
 %config(noreplace) %{_sysconfdir}/%{name}/*
