@@ -12,7 +12,7 @@ Group:      Networking/WWW
 Url:        http://www.mkgnu.net/?q=scmbug
 Source:     http://files.mkgnu.net/files/scmbug/SCMBUG_RELEASE_%{upstream_version}/source/SCMBUG_RELEASE_%{upstream_version}.tar.gz
 BuildRequires:  transfig
-BuildRequires:  ImageMagick
+BuildRequires:  imagemagick
 BuildRequires:  docbook-utils
 BuildRequires:  docbook-dtd42-sgml
 BuildRequires:  docbook-utils-pdf
