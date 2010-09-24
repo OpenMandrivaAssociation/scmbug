@@ -1,5 +1,5 @@
 %define name scmbug
-%define version 0.26.19
+%define version 0.26.20
 %define upstream_version %(echo %{version} | sed -e 's/\\./-/g')
 %define release %mkrel 1
 
@@ -62,6 +62,7 @@ Provides the Scmbug manual.
 %setup -q -n SCMBUG_RELEASE_%{upstream_version}
 
 %build
+export POSIXLY_CORRECT=1
 %configure2_5x
 make
 
