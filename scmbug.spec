@@ -1,5 +1,5 @@
 %define name scmbug
-%define version 0.26.21
+%define version 0.26.22
 %define upstream_version %(echo %{version} | sed -e 's/\\./-/g')
 %define release %mkrel 1
 
