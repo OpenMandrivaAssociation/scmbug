@@ -16,6 +16,7 @@ BuildRequires:  imagemagick
 BuildRequires:  docbook-utils
 BuildRequires:  docbook-dtd42-sgml
 BuildRequires:  docbook-utils-pdf
+BuildRequires:  ghostscript-dvipdf
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
