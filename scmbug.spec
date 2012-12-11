@@ -1,24 +1,25 @@
-%define name scmbug
-%define version 0.26.22
-%define upstream_version %(echo %{version} | sed -e 's/\\./-/g')
-%define release %mkrel 1
+%if %{_use_internal_dependency_generator}
+%define __noautoreq 'perl\\(Win32::OLE\\)'
+%endif
 
-Name:       %{name}
-Version:    %{version}
-Release:    %{release}
-Summary:    Integration of Software Configuration Management with Bug-tracking
-License:    GPL
-Group:      Networking/WWW
-Url:        http://www.mkgnu.net/?q=scmbug
-Source:     http://files.mkgnu.net/files/scmbug/SCMBUG_RELEASE_%{upstream_version}/source/SCMBUG_RELEASE_%{upstream_version}.tar.gz
-BuildRequires:  transfig
-BuildRequires:  imagemagick
-BuildRequires:  docbook-utils
-BuildRequires:  docbook-dtd42-sgml
-BuildRequires:  docbook-utils-pdf
-BuildRequires:  ghostscript-dvipdf
-BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+%define upstream_version %(echo %{version} | sed -e 's/\\./-/g')
+
+Name:		scmbug
+Version:	0.26.22
+Release:	3
+Summary:	Integration of Software Configuration Management with Bug-tracking
+License:	GPL
+Group:		Networking/WWW
+Url:		http://www.mkgnu.net/?q=scmbug
+Source:		http://files.mkgnu.net/files/scmbug/SCMBUG_RELEASE_%{upstream_version}/source/SCMBUG_RELEASE_%{upstream_version}.tar.gz
+BuildRequires:	transfig
+BuildRequires:	imagemagick
+BuildRequires:	docbook-utils
+BuildRequires:	docbook-dtd42-sgml
+BuildRequires:	docbook-utils-pdf
+BuildRequires:	ghostscript-dvipdf
+BuildRequires:	texlive
+BuildArch:	noarch
 
 %description
 Scmbug is a system that integrates software configuration management (SCM) with
@@ -68,7 +69,6 @@ export POSIXLY_CORRECT=1
 make
 
 %install
-rm -rf %{buildroot}
 %makeinstall
 
 # fix documentation mess
@@ -78,11 +78,7 @@ rm -rf %{buildroot}%{_docdir}/%{name}-tools
 mv %{buildroot}%{_docdir}/%{name}-doc %{buildroot}%{_docdir}/%{name}
 install -m 644 ChangeLog* %{buildroot}%{_docdir}/%{name}
 
-%clean
-rm -rf %{buildroot}
-
 %files common
-%defattr(-,root,root)
 %dir %{_docdir}/%{name}
 %{_docdir}/%{name}/ChangeLog*
 %{_docdir}/%{name}/AUTHORS
@@ -94,7 +90,6 @@ rm -rf %{buildroot}
 %{_datadir}/%{name}/lib/Scmbug/*.pm
 
 %files server
-%defattr(-,root,root)
 %dir %{_localstatedir}/log/%{name}
 %dir %{_sysconfdir}/%{name}
 %{_sysconfdir}/init.d/*
@@ -105,7 +100,6 @@ rm -rf %{buildroot}
 %{_datadir}/%{name}/WebReports
 
 %files tools
-%defattr(-,root,root)
 %{_mandir}/man1/*
 %{_prefix}/bin/*
 %dir %{_datadir}/%{name}/glue
@@ -117,5 +111,5 @@ rm -rf %{buildroot}
 %{_datadir}/%{name}/lib/Scmbug/Tools
 
 %files doc
-%defattr(-,root,root)
 %{_docdir}/%{name}/manual
+
