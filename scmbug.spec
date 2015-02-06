@@ -6,7 +6,7 @@
 
 Name:		scmbug
 Version:	0.26.22
-Release:	3
+Release:	4
 Summary:	Integration of Software Configuration Management with Bug-tracking
 License:	GPL
 Group:		Networking/WWW
